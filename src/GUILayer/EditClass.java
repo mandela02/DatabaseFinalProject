@@ -5,13 +5,11 @@
  */
 package GUILayer;
 
-import DataLayer.AddManager;
-import DataLayer.EditManager;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class EditClass extends javax.swing.JDialog {
   
@@ -195,49 +193,7 @@ public class EditClass extends javax.swing.JDialog {
 
     private void JBTEditEditClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditEditClassActionPerformed
         // TODO add your handling code here:
-         AddManager add=new AddManager();
-         EditManager edit=new EditManager();
-         POJO.Class cla=new POJO.Class();
-        int Year,check1,check2,check3;
-        check1=add.CheckClassID(this.JTFClassIDEditClass.getText(),Login);
-        check2=add.CheckDepartmentID(this.JTFDepartmentIDEditClass.getText(), Login);
-        check3=add.CheckStudentID(this.JTFMoniterIDEditClass.getText(), Login);
-        if(check1==0)
-        {
-         JOptionPane.showMessageDialog(null,"ClassID is Incorect!");
-        }
-        else
-        {
-            if(check3==0)
-            {
-                JOptionPane.showMessageDialog(null,"MoniterID is Incorect!");
-            }
-             else
-            {
-                if(check2==0)
-                {
-                    JOptionPane.showMessageDialog(null,"DepartmentID is Incorect!");
-                }
-                else
-                {
-                String vt=(String)this.JCBYearEditClass.getSelectedItem().toString();
-                Year=Integer.parseInt(vt);
-                cla.SetClassID(this.JTFClassIDEditClass.getText());
-                cla.SetClassName(this.JTFClassnameEditClass.getText());
-                cla.SetYear(Year);
-                cla.SetMoniterID(this.JTFMoniterIDEditClass.getText());
-                cla.SetDepartmentID(this.JTFDepartmentIDEditClass.getText());
-                edit.EditClassManager(cla, Login);
-                /*
-                this.JTFCLassIDClassEditManager.setText("");
-                this.JTFClassNameClassEditManager.setText("");
-                this.JTFMoniterIDClassEditManager.setText("");
-                this.JTFDepartmentIDClassEditManager.setText("");
-                */
-                this.setVisible(false);
-                }
-            }
-        }
+        
     }//GEN-LAST:event_JBTEditEditClassActionPerformed
 
     private void JBTCancelEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelEditStudentActionPerformed

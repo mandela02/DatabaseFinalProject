@@ -5,7 +5,6 @@
  */
 package GUILayer;
 
-import DataLayer.PostGreSQL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -13,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class Login extends javax.swing.JDialog {
 
@@ -190,53 +189,6 @@ public class Login extends javax.swing.JDialog {
     //Phuong thuc su kien Login
     private void JBTLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTLoginActionPerformed
         // TODO add your handling code here:
-        try {
-            Connection Connection;
-            
-            //this.JTFHostAddress.setText("localhost");
-           // this.JTFPort.setText("5432");
-           // this.JTFDatabaseName.setText("NewProject");
-            //this.JTFUserName.setText("admin");
-            //this.JTFPassWord.setText("12345");
-            this.HostAddress = this.JTFHostAddress.getText();
-            this.Port = this.JTFPort.getText();
-            this.DatabaseName = this.JTFDatabaseName.getText();
-            this.UserName = this.JTFUserName.getText();
-            this.PassWord = this.JTFPassWord.getText();
-            PostGreSQL SQL = new PostGreSQL();
-            Connection = SQL.open(HostAddress, Port, DatabaseName, UserName, PassWord);
-            //System.out.println(this.HostAddress+this.Port+this.DatabaseName+this.UserName+this.PassWord);
-            //CallableStatement st = Connection.prepareCall("{call get_account(?,?)}");
-            //st.setString(1, this.UserName);
-            //st.setString(2, this.PassWord);
-            Statement stm=Connection.createStatement();
-            String login=String.format("select * from account where username='%s' and password='%s'",this.UserName,this.PassWord);
-          //  ResultSet RS = st.executeQuery();
-            ResultSet RS=stm.executeQuery(login);
-            while (RS.next()) {
-                String s1 = RS.getString("username");
-                //this.UserName=RS.getString("username");
-                this.Name = RS.getString("contact");
-                String s2 = RS.getString("password");
-               // this.PassWord=RS.getString("password");
-                this.type = RS.getInt("role");
-                this.LoginValue = true;
-            }
-            SQL.close();
-            if (this.LoginValue == true) {
-                this.setVisible(false);
-                this.JTFHostAddress.setText("");
-                this.JTFPort.setText("");
-                this.JTFDatabaseName.setText("");
-                this.JTFUserName.setText("");
-                this.JTFPassWord.setText("");
-                Log log=new Log();
-            } else {
-                JOptionPane.showMessageDialog(this, "Login Falsed!Please try again!");
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Login Falsed!Please try again!");
-        }
     }//GEN-LAST:event_JBTLoginActionPerformed
 
     //Dinh nghia phuong thuc su kien Cancel

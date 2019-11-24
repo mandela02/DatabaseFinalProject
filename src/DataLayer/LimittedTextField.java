@@ -5,15 +5,17 @@
  */
 package DataLayer;
 
-import javax.swing.text.AttributeSet;
+
 import javax.swing.text.BadLocationException;
+import javax.swing.text.AttributeSet;
 import javax.swing.text.PlainDocument;
+
 /**
  *
- * @author --Client-ServEr--
+ * @author Bat Computer
  */
-public class LimittedTextField  extends PlainDocument{
-    private int Limit;
+public class LimittedTextField extends PlainDocument{
+ private int Limit;
     public LimittedTextField(int Limition)
     {
         this.Limit=Limition;
@@ -30,5 +32,5 @@ public class LimittedTextField  extends PlainDocument{
                 super.insertString(Offset, str, set);
             }
         }
-    }
+    }    
 }

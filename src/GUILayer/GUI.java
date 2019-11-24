@@ -5,25 +5,9 @@
  */
 package GUILayer;
 
+import DataLayer.LimittedTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.TableColumn;
-import DataLayer.AddManager;
-import DataLayer.AddStudent;
-import static DataLayer.Class_DataLayer.SearchAllClassForChart;
-import DataLayer.DeleteManager;
-import DataLayer.DeleteStudent;
-import DataLayer.EditManager;
-import static DataLayer.Event_DataLayer.SearchAllEventForChart;
-import DataLayer.LimittedTextField;
-import static DataLayer.Organization_DataLayer.SearchAllOrganizationForChart;
-import DataLayer.Participation_DataLayer;
-import DataLayer.ShowManager;
-import DataLayer.ShowStudent;
-import static DataLayer.Student_DataLayer.SearchAllStudentForChart;
-import POJO.Class;
-import POJO.Event;
-import POJO.Organization;
-import POJO.Student;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -53,7 +37,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class GUI extends javax.swing.JFrame {
 Login Login=new Login(this,true);
@@ -262,7 +246,7 @@ public static Date convertdate(java.util.Date utilDate) {
           Rectangle to = new Rectangle(size.width-580, (size.height-399),580,399);
           Animate1 animate = new Animate1(PN,from,to);
           animate.start(); 
-        
+ 
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -668,7 +652,6 @@ public static Date convertdate(java.util.Date utilDate) {
         DesktopPanel.setBackground(new java.awt.Color(31, 34, 43));
         DesktopPanel.setPreferredSize(new java.awt.Dimension(580, 360));
 
-        JBTShow.setIcon(new javax.swing.ImageIcon("E:\\JAVA\\PROJECT\\NewProject\\Desktop (2)\\search1.png")); // NOI18N
         JBTShow.setEnabled(false);
         JBTShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -676,7 +659,6 @@ public static Date convertdate(java.util.Date utilDate) {
             }
         });
 
-        JBTAdd.setIcon(new javax.swing.ImageIcon("E:\\JAVA\\PROJECT\\NewProject\\Desktop (2)\\update.png")); // NOI18N
         JBTAdd.setEnabled(false);
         JBTAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -684,7 +666,6 @@ public static Date convertdate(java.util.Date utilDate) {
             }
         });
 
-        JBTEdit.setIcon(new javax.swing.ImageIcon("E:\\JAVA\\PROJECT\\NewProject\\Desktop (2)\\edit copy.png")); // NOI18N
         JBTEdit.setEnabled(false);
         JBTEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -692,7 +673,6 @@ public static Date convertdate(java.util.Date utilDate) {
             }
         });
 
-        JBTDelete.setIcon(new javax.swing.ImageIcon("E:\\JAVA\\PROJECT\\NewProject\\Desktop (2)\\delete copy.png")); // NOI18N
         JBTDelete.setEnabled(false);
         JBTDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -717,11 +697,11 @@ public static Date convertdate(java.util.Date utilDate) {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Membership Management Software");
+        jLabel1.setText("Student Management");
 
         JBTAboutMMS.setBackground(new java.awt.Color(31, 34, 43));
         JBTAboutMMS.setForeground(new java.awt.Color(255, 255, 255));
-        JBTAboutMMS.setText("About MMS");
+        JBTAboutMMS.setText("About Us");
         JBTAboutMMS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBTAboutMMSActionPerformed(evt);
@@ -733,6 +713,17 @@ public static Date convertdate(java.util.Date utilDate) {
 
         JLBDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         JLBDate.setForeground(new java.awt.Color(255, 255, 255));
+
+        DesktopPanel.setLayer(JBTShow, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTAdd, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTEdit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTDelete, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTLogin, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTLogout, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JBTAboutMMS, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JLBWelcome, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPanel.setLayer(JLBDate, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout DesktopPanelLayout = new javax.swing.GroupLayout(DesktopPanel);
         DesktopPanel.setLayout(DesktopPanelLayout);
@@ -792,16 +783,6 @@ public static Date convertdate(java.util.Date utilDate) {
                     .addComponent(JLBWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        DesktopPanel.setLayer(JBTShow, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTAdd, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTEdit, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTDelete, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTLogin, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTLogout, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JBTAboutMMS, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JLBWelcome, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        DesktopPanel.setLayer(JLBDate, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         getContentPane().add(DesktopPanel, "card2");
 
@@ -3165,26 +3146,6 @@ public static Date convertdate(java.util.Date utilDate) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTLoginActionPerformed
-        // TODO add your handling code here:
-        Login.setVisible(true);
-        
-        if(Login.GetLoginvalue()==true)
-        {
-            Login.setVisible(false);
-            this.JBTShow.setEnabled(true);
-            this.JBTAdd.setEnabled(true);
-            this.JBTEdit.setEnabled(true);
-            this.JBTDelete.setEnabled(true);
-            this.JBTLogin.setEnabled(false);
-            this.JBTLogout.setEnabled(true);
-             this.JLBWelcome.setText("Welcome:"+this.Login.GetName()+"!");
-             Log log=new Log();
-            try {
-                log.insertlog(Login, todayD);
-            } catch (SQLException ex) {
-                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
     }//GEN-LAST:event_JBTLoginActionPerformed
 
     private void JBTLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTLogoutActionPerformed
@@ -3200,111 +3161,27 @@ public static Date convertdate(java.util.Date utilDate) {
     }//GEN-LAST:event_JBTLogoutActionPerformed
 
     private void JBTShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTShowActionPerformed
-        // TODO add your handling code here:
- this.DesktopPanel.setVisible(false);
-  if(this.Login.type==1)
-  {
-      this.JPNShowManager.setVisible(true);
-      this.JPNShowStudent.setVisible(false);
-      Moving(this.JPNShowManager);
-  
-  }
-  else
-  {
-      this.JPNShowManager.setVisible(false);
-      this.JPNShowStudent.setVisible(true);
-          ShowStudent show=new ShowStudent();
-            Student student=new Student();
-        student=show.ShowInformationStudent(student,Login);
-        this.JLBFirstName1StudentShowStudent.setText(student.GetFirstName());
-        this.JLBLastName1StudentShowStudent.setText(student.GetLastName());
-        this.JLBMobile1StudentShowStudent.setText(student.GetMobile());
-        this.JLBEmail1StudentShowStudent.setText(student.GetEmail());
-        this.JLBBirthDay1StudentShowStudent.setText(String.valueOf(student.GetBirthDay()));
-        this.JLBClassID1StudentShowStudent.setText(student.GetClassID());
-        this.JLBAddress1StudentShowStudent.setText(student.GetAddress());
-        this.JLBStudentID1StudentShowStudent.setText(student.GetStudentID());
-      Moving(this.JPNShowStudent);
-  }
         
     }//GEN-LAST:event_JBTShowActionPerformed
 
     private void JBTAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTAddActionPerformed
-        // TODO add your handling code here:
-//        this.DesktopPanel.setVisible(false);
-//  if(this.Login.type==1)
-//  {
-// this.JPNAddManager.setVisible(true);
-// this.JPNAddStudent.setVisible(false);
-// Moving(this.JPNAddManager);
-//  }
-//  else
-//  {
-//  this.JPNAddManager.setVisible(false);
-// this.JPNAddStudent.setVisible(true);
-// Moving(this.JPNAddStudent);
-//           DefaultTableModel DTM=new DefaultTableModel();
-//         ShowManager show=new ShowManager(); 
-//         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameAddStudent.getText());
-//         this.JTBOrganizationAddStudent.setModel(DTM);
-//         if(this.JTBOrganizationAddStudent.getRowCount()>=0)
-//             this.JTBOrganizationAddStudent.changeSelection(0,0,false,false);
-//  }
+
     }//GEN-LAST:event_JBTAddActionPerformed
 
     private void JBTEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(false);
-        if(this.Login.type==1)
-        {
-            this.JPNEditManager.setVisible(true);
-            this.JPNEditStudent.setVisible(false);
-            Moving(this.JPNEditManager);
-        }
-        else
-        {
-            this.JPNEditManager.setVisible(false);
-            this.JPNEditStudent.setVisible(true);     
-            Moving(this.JPNEditStudent);
-        }
     }//GEN-LAST:event_JBTEditActionPerformed
 
     private void JBTDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDeleteActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(false);
-        if(this.Login.type==1)
-        {
-            this.JPNDeleteManager.setVisible(true);
-            this.JPNDeleteStudent.setVisible(false);
-            Moving(this.JPNDeleteManager);
-        }
-        else
-        {
-            this.JPNDeleteManager.setVisible(false);
-            this.JPNDeleteStudent.setVisible(true);   
-            Moving(this.JPNDeleteStudent);
-          DefaultTableModel DTM=new DefaultTableModel();
-         DeleteStudent delete=new DeleteStudent();
-         DTM=delete.SearchParticipationTextField(this.Login.GetUserName(),this.JTFOrganizationNameDeleteStudent.getText(), Login);
-         this.JTBDeleteStudent.setModel(DTM);
-        }
+     
     }//GEN-LAST:event_JBTDeleteActionPerformed
 
 
     private void JTFStudentShowManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFStudentShowManagerCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentShowManager.getText());
-         this.JTBStudentShowManager.setModel(DTM);
+     
     }//GEN-LAST:event_JTFStudentShowManagerCaretUpdate
 
     private void JBTSearchStudentShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchStudentShowManagerActionPerformed
-        // TODO add your handling code here:
-       DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentShowManager.getText());
-         this.JTBStudentShowManager.setModel(DTM);
+  
     }//GEN-LAST:event_JBTSearchStudentShowManagerActionPerformed
 
     private void JTFClassShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFClassShowManagerActionPerformed
@@ -3313,1091 +3190,282 @@ public static Date convertdate(java.util.Date utilDate) {
     }//GEN-LAST:event_JTFClassShowManagerActionPerformed
 
     private void JBTStudentShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTStudentShowManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNStudentShowManager);
-        this.JPNStudentShowManager.setVisible(true);
-        this.JPNClassShowManager.setVisible(false);
-        this.JPNOrganizationShowManager.setVisible(false);
-        this.JPNEventShowManager.setVisible(false);
-        this.JPNChartShowManager.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentShowManager.getText());
-         this.JTBStudentShowManager.setModel(DTM);
+        
     }//GEN-LAST:event_JBTStudentShowManagerActionPerformed
 
     private void JBTClassShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTClassShowManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNClassShowManager);
-        this.JPNClassShowManager.setVisible(true);
-        this.JPNStudentShowManager.setVisible(false);
-        this.JPNOrganizationShowManager.setVisible(false);
-         this.JPNEventShowManager.setVisible(false);
-           this.JPNChartShowManager.setVisible(false);
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassShowManager.getText());
-         this.JTBClassShowManager.setModel(DTM);
+        
     }//GEN-LAST:event_JBTClassShowManagerActionPerformed
 
     private void JTFClassShowManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFClassShowManagerCaretUpdate
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassShowManager.getText());
-         this.JTBClassShowManager.setModel(DTM);
+       
     }//GEN-LAST:event_JTFClassShowManagerCaretUpdate
 
     private void JBTSearchClassShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchClassShowManagerActionPerformed
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassShowManager.getText());
-         this.JTBClassShowManager.setModel(DTM);
+      
     }//GEN-LAST:event_JBTSearchClassShowManagerActionPerformed
 
     private void JTFOrganizationShowManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationShowManagerCaretUpdate
-        // TODO add your handling code here:
-        DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationShowManager.getText());
-         this.JTBOrganizationShowManager.setModel(DTM);
+        
     }//GEN-LAST:event_JTFOrganizationShowManagerCaretUpdate
 
     private void JBTSearchOrganizationManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchOrganizationManagerActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationShowManager.getText());
-         this.JTBOrganizationShowManager.setModel(DTM);
+        
     }//GEN-LAST:event_JBTSearchOrganizationManagerActionPerformed
 
     private void JBTOrganizationShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationShowManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNOrganizationShowManager);
-        this.JPNOrganizationShowManager.setVisible(true);
-        this.JPNStudentShowManager.setVisible(false);
-        this.JPNClassShowManager.setVisible(false);
-         this.JPNEventShowManager.setVisible(false);
-           this.JPNChartShowManager.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationShowManager.getText());
-         this.JTBOrganizationShowManager.setModel(DTM);
     }//GEN-LAST:event_JBTOrganizationShowManagerActionPerformed
 
     private void JBTBackShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTBackShowManagerActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true); 
-        Moving1(this.DesktopPanel);
-        this.JPNOrganizationShowManager.setVisible(false);
-        this.JPNStudentShowManager.setVisible(false);
-        this.JPNClassShowManager.setVisible(false);
-        this.JPNShowManager.setVisible(false);
-     
-     
     }//GEN-LAST:event_JBTBackShowManagerActionPerformed
 
     private void JBTAboutMMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTAboutMMSActionPerformed
         // TODO add your handling code here:
-        this.about.setVisible(true);
     }//GEN-LAST:event_JBTAboutMMSActionPerformed
 
     private void JBTStudentAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTStudentAddManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNStudentAddManager);
-        this.JPNStudentAddManager.setVisible(true);
-        this.JPNClassAddManager.setVisible(false);
-        this.JPNOrganizationAddManager.setVisible(false);
         
     }//GEN-LAST:event_JBTStudentAddManagerActionPerformed
 
     private void JBTClassAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTClassAddManagerActionPerformed
         // TODO add your handling code here:
-        Moving2(this.JPNClassAddManager);
-        this.JPNClassAddManager.setVisible(true);
-        this.JPNStudentAddManager.setVisible(false);
-        this.JPNOrganizationAddManager.setVisible(false);
     }//GEN-LAST:event_JBTClassAddManagerActionPerformed
 
     private void JBTOrganizationAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationAddManagerActionPerformed
         // TODO add your handling code here:
-        Moving2(this.JPNOrganizationAddManager);
-        this.JPNOrganizationAddManager.setVisible(true);
-        this.JPNStudentAddManager.setVisible(false);
-        this.JPNClassAddManager.setVisible(false);
     }//GEN-LAST:event_JBTOrganizationAddManagerActionPerformed
 
     private void JBTBackAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTBackAddManagerActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNAddManager.setVisible(false);
     }//GEN-LAST:event_JBTBackAddManagerActionPerformed
 
     private void JBTAddStudentManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTAddStudentManagerActionPerformed
         // TODO add your handling code here:
-        AddManager add=new AddManager();
-        Student student=new Student();
-        boolean Sex;int Status,Check1,Check2;
-        Check1=add.CheckClassID(this.JTFClassIDStudentAddManager.getText(), Login);
-        Check2=add.CheckStudentID(this.JTFStudentIDStudentAddManager.getText(), Login);
-         if(Check2==1)
-            {
-                 JOptionPane.showMessageDialog(null,"StudentID  is Incorect!");
-            }
-        else
-        {
-             if(Check1==0)
-             {
-            JOptionPane.showMessageDialog(null,"ClassID  is Incorect!");
-            }
-        else
-                
-        {
-        String vt=(String)this.JCBGenderStudentAddManager.getSelectedItem().toString();;
-        Sex=vt.equals("Male");
-        student.SetGender(Sex);
-        student.SetStudentID(this.JTFStudentIDStudentAddManager.getText());
-        student.SetFirstName(this.JTFFirstNameStudentAddManager.getText());
-        student.SetLastName(this.JTFLastNameStudentAddManager.getText());
-        student.SetBirthDay(convertdate(this.JDCBirthDayStudentAddManager.getDate()));
-        student.SetMobile(this.JTFMobileStudentAddManager.getText());
-        student.SetEmail(this.JTFEmailStudentAddManager.getText());
-        student.SetDescription(this.JTFDescriptionStudentManager.getText());
-        student.SetClassID(this.JTFClassIDStudentAddManager.getText());
-        vt=(String)this.JCBStatusStudentAddManager.getSelectedItem().toString();    
-        Status=Integer.parseInt(vt);
-        student.SetStatus(Status);
-        add.AddStudentManager(student, Login);
-        this.JTFStudentIDStudentAddManager.setText("");
-        this.JTFFirstNameStudentAddManager.setText("");
-        this.JTFLastNameStudentAddManager.setText("");
-        this.JDCBirthDayStudentAddManager.setDate(null);
-        this.JTFMobileStudentAddManager.setText("");
-        this.JTFEmailStudentAddManager.setText("");
-        this.JTFClassIDStudentAddManager.setText("");
-        this.JTFDescriptionStudentManager.setText("");
-        this.JTFAddressStudentAddManager.setText("");
-        }
-        }
     }//GEN-LAST:event_JBTAddStudentManagerActionPerformed
 
     private void JBTAddClassAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTAddClassAddManagerActionPerformed
-        // TODO add your handling code here:
-        AddManager add=new AddManager();
-        Class cla=new Class();
-        int Year,check1,check2,check3;
-        check1=add.CheckClassID(this.JTFClassIDCLassAddManager.getText(),Login);
-        check2=add.CheckDepartmentID(this.JTFDepartmentIDClassAddManager.getText(), Login);
-        check3=add.CheckStudentID(this.JTFMoniterClassAddManager.getText(), Login);
-        if(check1==1)
-        {
-         JOptionPane.showMessageDialog(null,"ClassID is Incorect!");
-        }
-        else
-        {
-            if(check3==0)
-            {
-                JOptionPane.showMessageDialog(null,"MoniterID is Incorect!");
-            }
-             else
-            {
-                if(check2==0)
-                {
-                    JOptionPane.showMessageDialog(null,"DepartmentID is Incorect!");
-                }
-                else
-                {
-                String vt=(String)this.JCBYearClassAddManager.getSelectedItem().toString();
-                Year=Integer.parseInt(vt);
-                cla.SetClassID(this.JTFClassIDCLassAddManager.getText());
-                cla.SetClassName(this.JTFClassNameClassAddManager.getText());
-                cla.SetYear(Year);
-                cla.SetMoniterID(this.JTFMoniterClassAddManager.getText());
-                cla.SetDepartmentID(this.JTFDepartmentIDClassAddManager.getText());
-                add.AddClassManager(cla, Login);
-                this.JTFClassIDCLassAddManager.setText("");
-                this.JTFClassNameClassAddManager.setText("");
-                this.JTFMoniterClassAddManager.setText("");
-                this.JTFDepartmentIDClassAddManager.setText("");
-                }
-            }
-        }
+
        
     }//GEN-LAST:event_JBTAddClassAddManagerActionPerformed
 
     private void JBTAddOrganizationAddManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTAddOrganizationAddManagerActionPerformed
         // TODO add your handling code here:
-         AddManager add=new AddManager();
-         int check=add.CheckOrganizationID(this.JTFOrganizationIDOrganizationAddManager.getText(), Login);
-         Organization org=new Organization();
-         if(check==1)
-         {
-             JOptionPane.showMessageDialog(null,"OrganizationID is Incorect!");
-         }
-         else
-         {
-             org.SetOrganizationID(this.JTFOrganizationIDOrganizationAddManager.getText());
-             org.SetOrganizationName(this.JTFOrganizationNameOrganizationAddManager.getText());
-             org.SetManager(this.JTFManagerOrganizationAddManager.getText());
-             org.SetEmail(this.JTFEmailOrganizatonAddManager.getText());
-             org.SetMobile(this.JTFMobileOrganizationAddManager.getText());
-             add.AddOrganizationManager(org, Login);
-             this.JTFOrganizationIDOrganizationAddManager.setText(null);
-             this.JTFOrganizationNameOrganizationAddManager.setText(null);
-             this.JTFManagerOrganizationAddManager.setText(null);
-             this.JTFEmailOrganizatonAddManager.setText(null);
-             this.JTFMobileOrganizationAddManager.setText(null);
-         }
     }//GEN-LAST:event_JBTAddOrganizationAddManagerActionPerformed
 
     private void JBTStudentEditManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTStudentEditManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNStudentEditStudent);
-        this.JPNStudentEditStudent.setVisible(true);
-       //this.JPNStudentEditManager.setVisible(true);
-        this.JPNClassEditClass.setVisible(false);
-        this.JPNOrganizationEditOrganization.setVisible(false);
-        DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextFieldForEdit(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentEditManager.getText());
-         this.JTBStudentEditManager.setModel(DTM);
     }//GEN-LAST:event_JBTStudentEditManagerActionPerformed
 
     private void JBTClassEditManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTClassEditManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNClassEditClass);
-        this.JPNClassEditClass.setVisible(true);
-        this.JPNStudentEditStudent.setVisible(false);
-        this.JPNOrganizationEditOrganization.setVisible(false);
-                  DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassEditClass.getText());
-         this.JTBClassEditClass.setModel(DTM);
     }//GEN-LAST:event_JBTClassEditManagerActionPerformed
 
     private void JBTOrganizationEditManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationEditManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNOrganizationEditOrganization);
-                this.JPNOrganizationEditOrganization.setVisible(true);
-                 this.JPNClassEditClass.setVisible(false);
-                     this.JPNStudentEditStudent.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameEditOrganization.getText());
-         this.JTBOrganizationEditOrganization.setModel(DTM);
     }//GEN-LAST:event_JBTOrganizationEditManagerActionPerformed
 
     private void JBTBackEditManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTBackEditManagerActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNEditManager.setVisible(false);
     }//GEN-LAST:event_JBTBackEditManagerActionPerformed
 
     private void JTFStudentNameStudentDeleteManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFStudentNameStudentDeleteManagerCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentDeleteManager.getText());
-         this.JTBStudentDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JTFStudentNameStudentDeleteManagerCaretUpdate
 
     private void JBTSearchStudentDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchStudentDeleteManagerActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentDeleteManager.getText());
-         this.JTBStudentDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JBTSearchStudentDeleteManagerActionPerformed
 
     private void JBTStudentDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTStudentDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNStudentDeleteManager);
-        this.JPNStudentDeleteManager.setVisible(true);
-        this.JPNOrganizationDeleteManager.setVisible(false);
-        this.JPNClassDeleteManager.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentDeleteManager.getText());
-         this.JTBStudentDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JBTStudentDeleteManagerActionPerformed
 
     private void JBTClassDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTClassDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNClassDeleteManager);
-        this.JPNClassDeleteManager.setVisible(true);
-        this.JPNStudentDeleteManager.setVisible(false);
-        this.JPNOrganizationDeleteManager.setVisible(false);
-                 DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassClassDeleteManager.getText());
-         this.JTBClassDeleteManager.setModel(DTM);
-        
     }//GEN-LAST:event_JBTClassDeleteManagerActionPerformed
 
     private void JBTOrganizationDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNOrganizationDeleteManager);
-        this.JPNOrganizationDeleteManager.setVisible(true);
-        this.JPNStudentDeleteManager.setVisible(false);
-        this.JPNClassDeleteManager.setVisible(false);
-              DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationOrganizationDeleteManager.getText());
-         this.JTBOrganizationDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JBTOrganizationDeleteManagerActionPerformed
 
     private void JBTBackDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTBackDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNDeleteManager.setVisible(false);
     }//GEN-LAST:event_JBTBackDeleteManagerActionPerformed
 
     private void JBTDeleteStudentDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDeleteStudentDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        Student student=new Student();int n,n1;int Row=-1;
-        DeleteManager delete =new DeleteManager();
-        ShowManager show=new ShowManager();
-         Row=this.JTBStudentDeleteManager.getSelectedRow();
-         int check=JOptionPane.showConfirmDialog(this,"Are you sure?","Warning!",JOptionPane.YES_NO_OPTION);
-         if(check==JOptionPane.YES_OPTION)
-         {
-         if(Row!=-1)
-         {
-        String st=(String)this.JTBStudentDeleteManager.getValueAt(Row,0);
-        student.SetStudentID(st);
-        n=delete.DeleteStudentManager(student, Login);
-        n1=delete.DeleteParticipationManager(student, Login);
-        if(n<0 || n1<0)
-        {
-            JOptionPane.showMessageDialog(this,"Delete false!");
-        }
-        else
-        {
-         JOptionPane.showMessageDialog(this,"Delete Success!");
-         DefaultTableModel DTM=new DefaultTableModel();
-         DTM=show.SearchStudentButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentDeleteManager.getText());
-         this.JTBStudentDeleteManager.setModel(DTM);  
-        }
-         }
-         else
-              JOptionPane.showMessageDialog(this,"Delete false!");
-         }
     }//GEN-LAST:event_JBTDeleteStudentDeleteManagerActionPerformed
 
     private void JBTUpStudentDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTUpStudentDeleteManagerActionPerformed
-        // TODO add your handling code here:
-        int Row=this.JTBStudentDeleteManager.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBStudentDeleteManager.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBStudentDeleteManager.getRowCount()-1;
-            this.JTBStudentDeleteManager.changeSelection(LastRow,0,false,false);
-        }
     }//GEN-LAST:event_JBTUpStudentDeleteManagerActionPerformed
 
     private void JBTDownStudentDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDownStudentDeleteManagerActionPerformed
-        // TODO add your handling code here:
-          int Row=this.JTBStudentDeleteManager.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBStudentDeleteManager.getRowCount())
-          {
-               this.JTBStudentDeleteManager.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBStudentDeleteManager.changeSelection(0,0,false,false);
-          }
     }//GEN-LAST:event_JBTDownStudentDeleteManagerActionPerformed
 
     private void JTFOrganizationOrganizationDeleteManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationOrganizationDeleteManagerCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationOrganizationDeleteManager.getText());
-         this.JTBOrganizationDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JTFOrganizationOrganizationDeleteManagerCaretUpdate
 
     private void JBTSearchOrganizationDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchOrganizationDeleteManagerActionPerformed
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationOrganizationDeleteManager.getText());
-         this.JTBOrganizationDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JBTSearchOrganizationDeleteManagerActionPerformed
 
     private void JBTDeleteOrganizationDeleteMangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDeleteOrganizationDeleteMangerActionPerformed
-        // TODO add your handling code here:
-      Organization org=new Organization();int n,n1;int Row=-1;
-        DeleteManager delete =new DeleteManager();
-        ShowManager show=new ShowManager();
-           int check=JOptionPane.showConfirmDialog(this,"Are you sure?","Warning!",JOptionPane.YES_NO_OPTION);
-         if(check==JOptionPane.YES_OPTION)
-         {
-         Row=this.JTBOrganizationDeleteManager.getSelectedRow();
-        if(Row!=-1)
-        {
-        String st=(String)this.JTBOrganizationDeleteManager.getValueAt(Row,0);
-        org.SetOrganizationID(st);
-        n=delete.DeleteOrganizationManager(org,Login);
-        n1=delete.DeleteParticipation_OrganizationManager(org, Login);
-        if(n<0 || n1<0)
-        {
-            JOptionPane.showMessageDialog(this,"Delete false!");
-        }
-        else
-        {
-         JOptionPane.showMessageDialog(this,"Delete Success!");
-         DefaultTableModel DTM=new DefaultTableModel();
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationOrganizationDeleteManager.getText());
-         this.JTBOrganizationDeleteManager.setModel(DTM);  
-        }
-        }
-        else
-        {
-        JOptionPane.showMessageDialog(this,"Delete false!");
-        }
-         }
     }//GEN-LAST:event_JBTDeleteOrganizationDeleteMangerActionPerformed
 
     private void JBTUpOrganizationDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTUpOrganizationDeleteManagerActionPerformed
-        // TODO add your handling code here:
-                int Row=this.JTBOrganizationDeleteManager.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBOrganizationDeleteManager.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBOrganizationDeleteManager.getRowCount()-1;
-            this.JTBOrganizationDeleteManager.changeSelection(LastRow,0,false,false);
-        }
     }//GEN-LAST:event_JBTUpOrganizationDeleteManagerActionPerformed
 
     private void JBTDownOrganizationDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDownOrganizationDeleteManagerActionPerformed
-        // TODO add your handling code here:
-                  int Row=this.JTBOrganizationDeleteManager.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBOrganizationDeleteManager.getRowCount())
-          {
-               this.JTBOrganizationDeleteManager.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBOrganizationDeleteManager.changeSelection(0,0,false,false);
-          }
     }//GEN-LAST:event_JBTDownOrganizationDeleteManagerActionPerformed
 
     private void JTFClassClassDeleteManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFClassClassDeleteManagerCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassClassDeleteManager.getText());
-         this.JTBClassDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JTFClassClassDeleteManagerCaretUpdate
 
     private void JBTSearchClassDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchClassDeleteManagerActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassClassDeleteManager.getText());
-         this.JTBClassDeleteManager.setModel(DTM);
     }//GEN-LAST:event_JBTSearchClassDeleteManagerActionPerformed
 
     private void JBTDeleteClassDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDeleteClassDeleteActionPerformed
         // TODO add your handling code here:
-        Class cla=new Class();int n,n1;int Row=-1;
-        DeleteManager delete =new DeleteManager();
-        ShowManager show=new ShowManager();
-           int check=JOptionPane.showConfirmDialog(this,"Are you sure?","Warning!",JOptionPane.YES_NO_OPTION);
-         if(check==JOptionPane.YES_OPTION)
-         {
-        Row=this.JTBClassDeleteManager.getSelectedRow();
-        if(Row!=-1)
-        {
-        String st=(String)this.JTBClassDeleteManager.getValueAt(Row,0);
-        cla.SetClassID(st);
-        n=delete.DeleteClassManager(cla,Login);
-        n1=delete.DeleteStudent_ClassManager(cla, Login);
-        if(n<0 || n1<0)
-        {
-            JOptionPane.showMessageDialog(this,"Delete false!");
-        }
-        else
-        {
-         JOptionPane.showMessageDialog(this,"Delete Success!");
-         DefaultTableModel DTM=new DefaultTableModel();
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassClassDeleteManager.getText());
-         this.JTBClassDeleteManager.setModel(DTM);  
-        }
-        }
-        else
-             JOptionPane.showMessageDialog(this,"Delete false!");
-         }
     }//GEN-LAST:event_JBTDeleteClassDeleteActionPerformed
 
     private void JBTUpClassDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTUpClassDeleteManagerActionPerformed
-        // TODO add your handling code here:
-       int Row=this.JTBClassDeleteManager.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBClassDeleteManager.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBClassDeleteManager.getRowCount()-1;
-            this.JTBClassDeleteManager.changeSelection(LastRow,0,false,false);
-        }
     }//GEN-LAST:event_JBTUpClassDeleteManagerActionPerformed
 
     private void JBTDownClassDeleteManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDownClassDeleteManagerActionPerformed
-        // TODO add your handling code here:
-          int Row=this.JTBClassDeleteManager.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBClassDeleteManager.getRowCount())
-          {
-               this.JTBClassDeleteManager.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBClassDeleteManager.changeSelection(0,0,false,false);
-          }
     }//GEN-LAST:event_JBTDownClassDeleteManagerActionPerformed
 
     private void JBTInformationShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTInformationShowStudentActionPerformed
-        // TODO add your handling code here:
-        ShowStudent show=new ShowStudent();
-        Moving2(this.JPNInformationShowStudent);
-        this.JPNInformationShowStudent.setVisible(true);
-        this.JPNClassShowStudent.setVisible(false);
-        this.JPNOrganizationShowStudent.setVisible(false);
-        this.JPNEventShowStudent.setVisible(false);
-        Student student=new Student();
-        student=show.ShowInformationStudent(student,Login);
-        this.JLBFirstName1StudentShowStudent.setText(student.GetFirstName());
-        this.JLBLastName1StudentShowStudent.setText(student.GetLastName());
-        this.JLBMobile1StudentShowStudent.setText(student.GetMobile());
-        this.JLBEmail1StudentShowStudent.setText(student.GetEmail());
-        this.JLBBirthDay1StudentShowStudent.setText(String.valueOf(student.GetBirthDay()));
-        this.JLBClassID1StudentShowStudent.setText(student.GetClassID());
-        this.JLBAddress1StudentShowStudent.setText(student.GetAddress());
-        this.JLBStudentID1StudentShowStudent.setText(student.GetStudentID());
     }//GEN-LAST:event_JBTInformationShowStudentActionPerformed
 
     private void JBTClassShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTClassShowStudentActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNClassShowStudent);
-        this.JPNClassShowStudent.setVisible(true);
-        this.JPNInformationShowStudent.setVisible(false);
-        this.JPNOrganizationShowStudent.setVisible(false);
-         this.JPNEventShowStudent.setVisible(false);
-                  DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassNameClassShowStudent.getText());
-         this.JTBClassShowStudent.setModel(DTM);
     }//GEN-LAST:event_JBTClassShowStudentActionPerformed
 
     private void JBTOrganizationShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationShowStudentActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNOrganizationShowStudent);
-        this.JPNOrganizationShowStudent.setVisible(true);
-        this.JPNInformationShowStudent.setVisible(false);
-        this.JPNClassShowStudent.setVisible(false);
-         this.JPNEventShowStudent.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameOrganizationShowStudent.getText());
-         this.JTBOrganizationShowStudent.setModel(DTM);
     }//GEN-LAST:event_JBTOrganizationShowStudentActionPerformed
 
     private void JBTBackShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTBackShowStudentActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNShowStudent.setVisible(false);
-
     }//GEN-LAST:event_JBTBackShowStudentActionPerformed
 
     private void JTFClassNameClassShowStudentCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFClassNameClassShowStudentCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassNameClassShowStudent.getText());
-         this.JTBClassShowStudent.setModel(DTM);
     }//GEN-LAST:event_JTFClassNameClassShowStudentCaretUpdate
 
     private void JBTSearchClassShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchClassShowStudentActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassNameClassShowStudent.getText());
-         this.JTBClassShowStudent.setModel(DTM);
     }//GEN-LAST:event_JBTSearchClassShowStudentActionPerformed
 
     private void JTFOrganizationNameOrganizationShowStudentCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationNameOrganizationShowStudentCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameOrganizationShowStudent.getText());
-         this.JTBOrganizationShowStudent.setModel(DTM);
     }//GEN-LAST:event_JTFOrganizationNameOrganizationShowStudentCaretUpdate
 
     private void JBTSearchOrganizationShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchOrganizationShowStudentActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameOrganizationShowStudent.getText());
-         this.JTBOrganizationShowStudent.setModel(DTM);
     }//GEN-LAST:event_JBTSearchOrganizationShowStudentActionPerformed
 
     private void JTFOrganizationNameAddStudentCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationNameAddStudentCaretUpdate
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameAddStudent.getText());
-         this.JTBOrganizationAddStudent.setModel(DTM);
-         if(this.JTBOrganizationAddStudent.getRowCount()>=0)
-             this.JTBOrganizationAddStudent.changeSelection(0,0,false,false);
     }//GEN-LAST:event_JTFOrganizationNameAddStudentCaretUpdate
 
     private void JBTSearchOrganizationAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchOrganizationAddStudentActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameAddStudent.getText());
-         this.JTBOrganizationAddStudent.setModel(DTM);
-              if(this.JTBOrganizationAddStudent.getRowCount()>=0)
-             this.JTBOrganizationAddStudent.changeSelection(0,0,false,false);
     }//GEN-LAST:event_JBTSearchOrganizationAddStudentActionPerformed
 
     private void JBTOrganizationAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTOrganizationAddStudentActionPerformed
-        // TODO add your handling code here:
-        String OrgID,StudentID,Role;
-        Role=(String)this.JCBRoleOrganizationAddStudent.getSelectedItem().toString();
-        AddStudent Add=new AddStudent();
-        Participation_DataLayer Par=new Participation_DataLayer();
-        Date Start,End;
-        int Row=-1;
-        int Check;
-        Start=convertdate(this.JDCTimeStartOrganizationAddStudent.getDate());
-        End=convertdate(this.JDCTimeEndOrganizationAddStudent.getDate());
-        Row=this.JTBOrganizationAddStudent.getSelectedRow();
-        if(Row==-1)
-        {
-            JOptionPane.showMessageDialog(this,"Registry falsed!Please try again!");
-        }
-        else
-        {
-        OrgID=(String) this.JTBOrganizationAddStudent.getValueAt(Row,0);
-        StudentID=this.Login.GetUserName();
-        Check=Add.CheckParticipation(StudentID, OrgID, Login);
-        if(Check==1)
-        {
-            JOptionPane.showMessageDialog(this,"You already joined this organization!");
-        }
-        else
-        { Add.AddParticipation(StudentID, OrgID, Role, Start, End, Login);
-        }
-        }    
     }//GEN-LAST:event_JBTOrganizationAddStudentActionPerformed
 
     private void JBTCancelAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelAddStudentActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNAddStudent.setVisible(false);
     }//GEN-LAST:event_JBTCancelAddStudentActionPerformed
 
     private void JBTCancelEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelEditStudentActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNEditStudent.setVisible(false);
     }//GEN-LAST:event_JBTCancelEditStudentActionPerformed
 
     private void JBTEditEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditEditStudentActionPerformed
-        // TODO add your handling code here:
-        Student student=new Student();
-        EditManager edit=new EditManager();
-        student.SetStudentID(Login.GetUserName());
-        student.SetFirstName(this.JTFFirstNameEditStudent.getText());
-        student.SetLastName(this.JTFLastNameEditStudent.getText());
-        student.SetBirthDay(convertdate(this.JDCBirthDayEditStudent.getDate()));
-        student.SetMobile(this.JTFMobileEditStudent.getText());
-        student.SetEmail(this.JTFEmailEditStudent.getText());
-        student.SetAddress(this.JTFAddressEditStudent.getText());
-        edit.EditStudentManager(student, Login);
     }//GEN-LAST:event_JBTEditEditStudentActionPerformed
 
     private void JTFOrganizationNameDeleteStudentCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationNameDeleteStudentCaretUpdate
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         DeleteStudent delete=new DeleteStudent();
-         DTM=delete.SearchParticipationTextField(this.Login.GetUserName(),this.JTFOrganizationNameDeleteStudent.getText(), Login);
-         this.JTBDeleteStudent.setModel(DTM);
     }//GEN-LAST:event_JTFOrganizationNameDeleteStudentCaretUpdate
 
     private void JBTCancelDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelDeleteStudentActionPerformed
-        // TODO add your handling code here:
-        this.DesktopPanel.setVisible(true);
-        Moving1(this.DesktopPanel);
-        this.JPNDeleteStudent.setVisible(false);
     }//GEN-LAST:event_JBTCancelDeleteStudentActionPerformed
 
     private void JBTSearchDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchDeleteStudentActionPerformed
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         DeleteStudent delete=new DeleteStudent();
-         DTM=delete.SearchParticipationButton(this.Login.GetUserName(),this.JTFOrganizationNameDeleteStudent.getText(), Login);
-         this.JTBDeleteStudent.setModel(DTM);
     }//GEN-LAST:event_JBTSearchDeleteStudentActionPerformed
 
     private void JBTUpDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTUpDeleteStudentActionPerformed
-        // TODO add your handling code here:
-         int Row=this.JTBDeleteStudent.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBDeleteStudent.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBDeleteStudent.getRowCount()-1;
-            this.JTBDeleteStudent.changeSelection(LastRow,0,false,false);
-        }
     }//GEN-LAST:event_JBTUpDeleteStudentActionPerformed
 
     private void JBTDownDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDownDeleteStudentActionPerformed
-        // TODO add your handling code here:
-           int Row=this.JTBDeleteStudent.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBDeleteStudent.getRowCount())
-          {
-               this.JTBDeleteStudent.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBDeleteStudent.changeSelection(0,0,false,false);
-          }
     }//GEN-LAST:event_JBTDownDeleteStudentActionPerformed
 
     private void JBTDeleteDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTDeleteDeleteStudentActionPerformed
-        // TODO add your handling code here:
-         DeleteStudent delete=new DeleteStudent();
-        String OrgID;
-        int Row=-1;int exe;
-        Row=this.JTBDeleteStudent.getSelectedRow();
-        int check;
-        check=JOptionPane.showConfirmDialog(this,"Are you sure?","Warning!",JOptionPane.YES_NO_OPTION);
-        if(check==JOptionPane.YES_OPTION)
-        {
-        if(Row==-1)
-        {
-              JOptionPane.showMessageDialog(this,"Delete false!");
-        }
-        else
-        {
-        OrgID=(String) this.JTBDeleteStudent.getValueAt(Row,0);
-        exe=delete.DeleteparticipationStudent(this.Login.GetUserName(),OrgID, Login);
-        if(exe>=0)
-        {
-         JOptionPane.showMessageDialog(this,"Delete Success!");
-         DefaultTableModel DTM=new DefaultTableModel();
-         DTM=delete.SearchParticipationTextField(this.Login.GetUserName(),this.JTFOrganizationNameDeleteStudent.getText(), Login);
-         this.JTBDeleteStudent.setModel(DTM);
-              if(this.JTBDeleteStudent.getRowCount()>0)
-             this.JTBDeleteStudent.changeSelection(0,0,false,false);
-        }
-          else
-            JOptionPane.showMessageDialog(this,"Delete false!");
-        }
     }//GEN-LAST:event_JBTDeleteDeleteStudentActionPerformed
-    }
+ 
     private void JTFEventNameEventShowManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFEventNameEventShowManagerCaretUpdate
         // TODO add your handling code here:
-           DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventTextField(this.Login,this.JTFEventNameEventShowManager.getText());
-         this.JTBEventShowManager.setModel(DTM);
     }//GEN-LAST:event_JTFEventNameEventShowManagerCaretUpdate
 
     private void JBTSearchEventShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchEventShowManagerActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventButton(this.Login,this.JTFEventNameEventShowManager.getText());
-         this.JTBEventShowManager.setModel(DTM);
     }//GEN-LAST:event_JBTSearchEventShowManagerActionPerformed
 
     private void JBTEventShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEventShowManagerActionPerformed
         // TODO add your handling code here:
-        Moving2(this.JPNEventShowManager);
-         this.JPNEventShowManager.setVisible(true);
-           this.JPNOrganizationShowManager.setVisible(false);
-        this.JPNStudentShowManager.setVisible(false);
-        this.JPNClassShowManager.setVisible(false);
-          this.JPNChartShowManager.setVisible(false);
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventTextField(this.Login,this.JTFEventNameEventShowManager.getText());
-         this.JTBEventShowManager.setModel(DTM);
         
     }//GEN-LAST:event_JBTEventShowManagerActionPerformed
 
     private void JTFEventShowStudentCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFEventShowStudentCaretUpdate
         // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventTextField(this.Login,this.JTFEventShowStudent.getText());
-         this.JTBEventShosStudent.setModel(DTM);
     }//GEN-LAST:event_JTFEventShowStudentCaretUpdate
 
     private void JBTSearchEventShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchEventShowStudentActionPerformed
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventButton(this.Login,this.JTFEventShowStudent.getText());
-         this.JTBEventShosStudent.setModel(DTM);
     }//GEN-LAST:event_JBTSearchEventShowStudentActionPerformed
 
     private void JBTEventShowStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEventShowStudentActionPerformed
-        // TODO add your handling code here:
-        Moving2(this.JPNEventShowStudent);
-            this.JPNEventShowStudent.setVisible(true);
-             this.JPNOrganizationShowStudent.setVisible(false);
-        this.JPNInformationShowStudent.setVisible(false);
-        this.JPNClassShowStudent.setVisible(false);
-     
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchEventTextField(this.Login,this.JTFEventShowStudent.getText());
-         this.JTBEventShosStudent.setModel(DTM);
     }//GEN-LAST:event_JBTEventShowStudentActionPerformed
 
     private void JBTChartShowManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTChartShowManagerActionPerformed
-        // TODO add your handling code here:
-     
-        this.JPNChartShowManager.setVisible(true);
-        Moving2(this.JPNChartShowManager);
-        this.JPNEventShowManager.setVisible(false);
-        this.JPNOrganizationShowManager.setVisible(false);
-        this.JPNStudentShowManager.setVisible(false);
-        this.JPNClassShowManager.setVisible(false);
-        int stu,cla,org,event;
-        ArrayList<Student> ArrayList1=new ArrayList<Student>();
-        ArrayList1=SearchAllStudentForChart(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord());
-        stu=ArrayList1.size();
-        ArrayList<Class> ArrayList2=new ArrayList<Class>();
-        ArrayList2=SearchAllClassForChart(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord());
-        cla=ArrayList2.size();
-        ArrayList<Organization> ArrayList3=new ArrayList<Organization>();
-        ArrayList3=SearchAllOrganizationForChart(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord());
-        org=ArrayList3.size();
-       ArrayList<Event> ArrayList4=new ArrayList<Event>();
-       ArrayList4=SearchAllEventForChart(this.Login);
-       event=ArrayList4.size();
-        DefaultCategoryDataset barCharData =new DefaultCategoryDataset();
-        barCharData.setValue(stu,"Chart","Student");
-        barCharData.setValue(cla,"Chart","Class");
-        barCharData.setValue(org,"Chart","Organization");
-        barCharData.setValue(event,"Chart","Event");
-        JFreeChart barChart=ChartFactory.createBarChart("","OBJECT","AMOUNT", barCharData, PlotOrientation.VERTICAL, false,true,false);
-        CategoryPlot Chart=barChart.getCategoryPlot();
-        Chart.setRangeGridlinePaint(Color.GREEN);
-        ChartPanel barpanel=new ChartPanel(barChart);
-        this.JPNChartShowManager.removeAll();
-        this.JPNChartShowManager.add(barpanel,BorderLayout.CENTER);
-        this.JPNChartShowManager.validate();
-       
     }//GEN-LAST:event_JBTChartShowManagerActionPerformed
 
     private void JTFStudentNameStudentEditManagerCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFStudentNameStudentEditManagerCaretUpdate
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentTextFieldForEdit(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentEditManager.getText());
-         this.JTBStudentEditManager.setModel(DTM);
     }//GEN-LAST:event_JTFStudentNameStudentEditManagerCaretUpdate
 
     private void JBTSearchEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchEditStudentActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchStudentButtonForEdit(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFStudentNameStudentEditManager.getText());
-          this.JTBStudentEditManager.setModel(DTM);
     }//GEN-LAST:event_JBTSearchEditStudentActionPerformed
 
     private void JBTEditStudentEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditStudentEditActionPerformed
-        // TODO add your handling code here:
-       int Row=this.JTBStudentEditManager.getSelectedRow();
-       EditStudent Edit=new EditStudent(this,true);
-       cycleThruChildren(Edit);
-       Edit.SetLogin(this.Login);
-       Edit.JTFStudentIDEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,0));
-       Edit.JTFFirstNameEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,1));
-       Edit.JTFLastNameEditStudent.setText((String)this.JTBStudentEditManager.getValueAt(Row,2));
-       Edit.JTFMobileEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,5));
-        Edit.JTFEmailEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,6));
-       Edit.JTFAddressEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,7));
-       Edit.JTFClassIDEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,8));
-        Edit.JTFDescriptionEditStudent.setText((String) this.JTBStudentEditManager.getValueAt(Row,9));
-       // this.DesktopPanel.add(Edit);
-        Edit.setVisible(true);  
     }//GEN-LAST:event_JBTEditStudentEditActionPerformed
 
     private void JTFClassEditClassCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFClassEditClassCaretUpdate
         // TODO add your handling code here:
-           DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassEditClass.getText());
-         this.JTBClassEditClass.setModel(DTM);
+        
     }//GEN-LAST:event_JTFClassEditClassCaretUpdate
 
     private void JBTSearchEditClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchEditClassActionPerformed
         // TODO add your handling code here:
-                  DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchClassButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFClassEditClass.getText());
-         this.JTBClassEditClass.setModel(DTM);
+        
     }//GEN-LAST:event_JBTSearchEditClassActionPerformed
 
     private void JBTEditClassEditClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditClassEditClassActionPerformed
         // TODO add your handling code here:
-     int Row=this.JTBClassEditClass.getSelectedRow();
-      EditClass cla=new EditClass(this,true);
-       cycleThruChildren(cla);
-       cla.SetLogin(this.Login);
-       cla.JTFClassIDEditClass.setText((String) this.JTBClassEditClass.getValueAt(Row,0));
-        cla.JTFClassnameEditClass.setText((String) this.JTBClassEditClass.getValueAt(Row,1));
-         cla.JTFMoniterIDEditClass.setText((String) this.JTBClassEditClass.getValueAt(Row,3));
-        cla.JTFDepartmentIDEditClass.setText((String) this.JTBClassEditClass.getValueAt(Row,4));
-        cla.setVisible(true);  
     }//GEN-LAST:event_JBTEditClassEditClassActionPerformed
 
     private void JTFOrganizationNameEditOrganizationCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_JTFOrganizationNameEditOrganizationCaretUpdate
         // TODO add your handling code here:
-       DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationTextField(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameEditOrganization.getText());
-         this.JTBOrganizationEditOrganization.setModel(DTM);
     }//GEN-LAST:event_JTFOrganizationNameEditOrganizationCaretUpdate
 
     private void JBTSearchOrganizationEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTSearchOrganizationEditActionPerformed
-        // TODO add your handling code here:
-          DefaultTableModel DTM=new DefaultTableModel();
-         ShowManager show=new ShowManager(); 
-         DTM=show.SearchOrganizationButton(this.Login.GetHostAddress(),this.Login.GetPort(),this.Login.GetDatabaseName(),this.Login.GetUserName(),this.Login.GetPassWord(),this.JTFOrganizationNameEditOrganization.getText());
-         this.JTBOrganizationEditOrganization.setModel(DTM);
+
     }//GEN-LAST:event_JBTSearchOrganizationEditActionPerformed
 
     private void JBTEditOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditOrganizationActionPerformed
         // TODO add your handling code here:
-         int Row=this.JTBOrganizationEditOrganization.getSelectedRow();
-          EditOrganization Edit=new EditOrganization(this,true);
-       cycleThruChildren(Edit);
-       Edit.SetLogin(this.Login);
-       Edit.JTFOrganizationIDEditOrganization.setText((String) this.JTBOrganizationEditOrganization.getValueAt(Row,0));
-       Edit.JTFOrganizationNameEditOrganization.setText((String) this.JTBOrganizationEditOrganization.getValueAt(Row,1));
-        Edit.JTFmanagerEditOrganization.setText((String) this.JTBOrganizationEditOrganization.getValueAt(Row,2));
-         Edit.JTFMobileEditOrganization.setText((String) this.JTBOrganizationEditOrganization.getValueAt(Row,4));
-          Edit.JTFEmailEditOrganziation.setText((String) this.JTBOrganizationEditOrganization.getValueAt(Row,3));
-        Edit.setVisible(true);  
     }//GEN-LAST:event_JBTEditOrganizationActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          int Row=this.JTBStudentEditManager.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBStudentEditManager.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBStudentEditManager.getRowCount()-1;
-            this.JTBStudentEditManager.changeSelection(LastRow,0,false,false);
-        }
+          
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-                int Row=this.JTBStudentEditManager.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBStudentEditManager.getRowCount())
-          {
-               this.JTBStudentEditManager.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBStudentEditManager.changeSelection(0,0,false,false);
-          }
+           
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-           int Row=this.JTBClassEditClass.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBClassEditClass.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBClassEditClass.getRowCount()-1;
-            this.JTBClassEditClass.changeSelection(LastRow,0,false,false);
-        }
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-                int Row=this.JTBClassEditClass.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBClassEditClass.getRowCount())
-          {
-               this.JTBClassEditClass.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBClassEditClass.changeSelection(0,0,false,false);
-          }
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-             int Row=this.JTBOrganizationEditOrganization.getSelectedRow();
-        Row-=1;
-        if(Row>=0)
-        {
-            this.JTBOrganizationEditOrganization.changeSelection(Row,0,false,false);
-        }
-        else
-        {
-            int LastRow=this.JTBOrganizationEditOrganization.getRowCount()-1;
-            this.JTBOrganizationEditOrganization.changeSelection(LastRow,0,false,false);
-        }
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-               int Row=this.JTBOrganizationEditOrganization.getSelectedRow();
-          Row+=1;
-          if(Row < this.JTBOrganizationEditOrganization.getRowCount())
-          {
-               this.JTBOrganizationEditOrganization.changeSelection(Row,0,false,false);
-          }
-          else
-          {
-               this.JTBOrganizationEditOrganization.changeSelection(0,0,false,false);
-          }
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**

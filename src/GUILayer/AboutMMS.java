@@ -7,7 +7,7 @@ package GUILayer;
 
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class AboutMMS extends javax.swing.JDialog {
 
@@ -17,14 +17,7 @@ public class AboutMMS extends javax.swing.JDialog {
     public AboutMMS(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-           this.JEDAboutMMS.setText("Name of Program: Membership Management Software (MMS)\n" +
-"Version: 2013.1\n" +
-"Copyright (c) 2013 HEDSPI K56-A\n" +
-"Platform: Java Language\n" +
-"\n" +
-"Development Team: Vu Van Trung\n                                      Hoang Nhat Quan\n                                      Nguyen Thanh Trung (A)\n                                      Nguyen Thanh Trung (B)\n" +
-"\n" +
-"This program is completed thanks to the helps of lecturer Nguyen Hong Phuong, MSc and lecturer Vu Tuyet Trinh, Dr, Department of Information Systems, School of Information and Communication Technology,Hanoi University of Science and Technology.");
+           this.JEDAboutMMS.setText("");
     }
     
 

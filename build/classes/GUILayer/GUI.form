@@ -182,7 +182,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Membership Management Software"/>
+            <Property name="text" type="java.lang.String" value="Student Management"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="JBTAboutMMS">
@@ -193,7 +193,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="About MMS"/>
+            <Property name="text" type="java.lang.String" value="About Us"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTAboutMMSActionPerformed"/>

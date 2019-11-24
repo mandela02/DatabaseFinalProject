@@ -5,16 +5,13 @@
  */
 package GUILayer;
 
-import DataLayer.AddManager;
-import DataLayer.EditManager;
 import static GUILayer.GUI.convertdate;
-import POJO.Student;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class EditStudent extends java.awt.Dialog {
     private String StudentID;
@@ -338,45 +335,6 @@ public class EditStudent extends java.awt.Dialog {
     private void JBTEditEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditEditStudentActionPerformed
         // TODO add your handling code here:
          
-        AddManager add=new AddManager();
-          EditManager edit=new EditManager();
-        Student stu=new Student();
-       
-        int check1,check2,Status;boolean Sex;
-        check1=add.CheckStudentID(this.JTFStudentIDEditStudent.getText(), Login);
-        check2=add.CheckClassID(this.JTFClassIDEditStudent.getText(), Login);
-        if(check1==0)
-        {
-            JOptionPane.showMessageDialog(null,"StudentID is  Incorect!");
-        }
-        else
-        {
-            if(check2==0)
-            {
-                JOptionPane.showMessageDialog(null,"ClassID is  Incorect!");
-            }
-            else
-            {
-                stu.SetStudentID(this.JTFStudentIDEditStudent.getText());
-                stu.SetFirstName(this.JTFFirstNameEditStudent.getText());
-                stu.SetLastName(this.JTFLastNameEditStudent.getText());
-                String vt=(String)this.JCBGenderEditStudent.getSelectedItem().toString();;
-                Sex=vt.equals("Male");
-                stu.SetGender(Sex);
-                stu.SetBirthDay(convertdate(this.JDCBirthDayEditStudent.getDate()));
-                stu.SetMobile(this.JTFMobileEditStudent.getText());
-                stu.SetEmail(this.JTFEmailEditStudent.getText());
-                stu.SetAddress(this.JTFAddressEditStudent.getText());
-                stu.SetClassID(this.JTFClassIDEditStudent.getText());
-                stu.SetDescription(this.JTFDescriptionEditStudent.getText());
-                vt=(String)this.JCBSatusEditStudent.getSelectedItem().toString();
-                Status=Integer.parseInt(vt);
-                stu.SetStatus(Status);
-                edit.EditStudentManager(stu, Login);
-                this.setVisible(false);
-            }
-        }
-        
     }//GEN-LAST:event_JBTEditEditStudentActionPerformed
 
     private void JBTCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelActionPerformed

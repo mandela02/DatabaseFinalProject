@@ -5,14 +5,11 @@
  */
 package GUILayer;
 
-import DataLayer.AddManager;
-import DataLayer.EditManager;
-import POJO.Organization;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author --Client-ServEr--
+ *  @author Bat Computer
  */
 public class EditOrganization extends javax.swing.JDialog {
  private String OrganizationID;
@@ -200,24 +197,7 @@ public class EditOrganization extends javax.swing.JDialog {
 
     private void JBTEditOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTEditOrganizationActionPerformed
         // TODO add your handling code here:
-               AddManager add=new AddManager();
-                 EditManager edit=new EditManager();
-         int check=add.CheckOrganizationID(this.JTFOrganizationIDEditOrganization.getText(), Login);
-         Organization org=new Organization();
-         if(check==0)
-         {
-             JOptionPane.showMessageDialog(null,"OrganizationID is Incorect!");
-         }
-         else
-         {
-             org.SetOrganizationID(this.JTFOrganizationIDEditOrganization.getText());
-             org.SetOrganizationName(this.JTFOrganizationNameEditOrganization.getText());
-             org.SetManager(this.JTFmanagerEditOrganization.getText());
-             org.SetEmail(this.JTFEmailEditOrganziation.getText());
-             org.SetMobile(this.JTFMobileEditOrganization.getText());
-             edit.EditOrganizationManager(org, Login);
-             this.setVisible(false);
-         }
+        
     }//GEN-LAST:event_JBTEditOrganizationActionPerformed
 
     private void JBTCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTCancelActionPerformed
